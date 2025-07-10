@@ -1,0 +1,27 @@
+/* 자손 선택자 */
+div p {
+    color: red;
+}
+
+/* 자식 선택자 */
+ul > li {
+    color: green;
+    font-weight: bold;
+}
+
+/* 인접 형제 선택자 */
+h1 + a {
+    color: blue;
+    font-size: 18px;
+}
+
+/* 일반 형제 선택자 */
+h1 ~ p {
+    color: orange;
+    font-style: italic;
+}
+
+    /* 3n+1 리스트 항목 스타일 적용 */
+  li:nth-child(3n+1) {
+      background-color: #ff910060
+  }

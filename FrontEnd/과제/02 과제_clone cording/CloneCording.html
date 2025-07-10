@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>메뉴</h1>
+    <li><a href="#">회원가입</a></li>
+    <li><a href="#">프로필 정보</a></li>
+    <li><a href="#">문의하기</a></li>
+
+    <hr>
+
+    <h1>회원가입</h1>
+    <label for="name">사용자 이름: </label>
+    <input type="text" id="name" placeholder="이름을 입력하세요">
+    <br><br>
+
+    <label for="email">이메일: </label>
+    <input type="text" id="email" placeholder="이메일도 입력하세요">
+    <br><br>
+
+    <label for="password">비밀번호: </label>
+    <input type="password" id="password">
+    <br><br>
+
+    <label for="age">나이: </label>
+    <input type="text" id="age" placeholder="나이">
+    <br><br>
+
+    <label>성별:</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">남성</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">여성</label>
+    <br><br>
+
+    <label for="textarea">자기소개: </label>
+    <textarea id="textarea" placeholder="자기소개를 적어주세요"></textarea>
+    <br><br>
+
+    <!-- 좋아하는 취미 선택 -->
+    <label for="fruits">좋아하는 취미:</label>
+    <select id="fruits" name="fruits[]" required>
+        <optgroup label="체육">
+            <option value="soccer" selected>축구</option>
+            <option value="basketball">농구</option>
+        </optgroup>
+        <optgroup label="요리">
+            <option value="baking">제과제빵</option>
+            <option value="chef">요리사</option>
+        </optgroup>
+    </select>
+    <br><br>
+
+    <!-- 파일 업로드 -->
+    <label for="profilePic">프로필 사진 업로드:</label>
+    <input type="file" id="profilePic" name="profilePic" accept="image/*">
+    <br><br>
+
+    <!-- 양식 제출 -->
+    <button type="submit">회원가입</button>
+    <button type="reset">초기화</button>
+
+    <!-- 작업 진행 상황 -->
+    <label for="uploadProgress">업로드 진행 상황:</label>
+    <progress id="uploadProgress" value="100" max="100"></progress>
+    <hr>
+
+    <h1>프로필 정보</h1>
+    <table border="1" width="1000" height="150">
+        <caption>프로필 정보 요약</caption>
+        <thead>
+            <th>
+                항목
+            </th>
+            <th>
+                내용
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <th>프로필</th>
+                <td><img id="profileImage" src="profilePic" alt="프로필 사진 미리보기" width="150"></td>" alt="프로필 사진 미리보기" width="150"></td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td id="displayName"></td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td id="displayEmail"></td>
+            </tr>
+            <tr>
+                <th>나이</th>
+                <td id="displayAge"></td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td id="displayGender"></td>
+            </tr>
+            <tr>
+                <th>자기소개</th>
+                <td id="displayBio"></td>
+            </tr>
+            <tr>
+                <th>취미</th>
+                <td id="displayHobbies"></td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <td>
+                프로필 정보가 성공적으로 업데이트되었습니다.
+            </td>
+        </tfoot>
+    </table>
+    <hr>
+
+    <h1>문의하기</h1>
+
+    <i>문의: <a href="example@example.com">example@example.com</a>
+    <br><br>
+
+    전화: 010-1234-5678
+    <br><br>
+
+    주소: 서울특별시 중구 예제로 123</i>
+
+    <h2>오시는길</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.7315056996395!2d126.99896417761477!3d37.561389111395926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca392e4e7541d%3A0x440dae1c39bb8646!2z7Iqk7YOA67KF7IqkIOuPmeq1reuMgOygkA!5e0!3m2!1sko!2skr!4v1752133900329!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <br>
+    Copyright ⓒ <b>2025</b> 프로필 관리 페이지
+</body>
+</html>

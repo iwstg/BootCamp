@@ -1,0 +1,33 @@
+/* 문단의 첫 번째 줄에 스타일 적용 */
+p::first-line {
+  font-weight: bold;
+  color: green;
+}
+
+/* 문단의 첫 글자에 스타일 적용 */
+p::first-letter {
+  font-size: 2em;
+  color: blue;
+}
+
+/* 콘텐츠 앞에 가상의 내용 추가 */
+p::before {
+  content: "Note: ";
+  font-weight: bold;
+  color: red;
+}
+
+/* 콘텐츠 뒤에 가상의 내용 추가 */
+p::after { 
+  content: " (End of paragraph)";
+  font-style: italic;
+  color: gray;
+}
+응>>>??
+옹.. 근데 velog 여기에 쓰는데 그 마크다운 코드블럭 색상이 회색이랑 비슷해서 뭐 보이질않음 
+하ㅇ
+그걸 왜 ㅇ얀배경 회색코드블럭
+이거봐바 
+이거 코드 블럭이 있는거임 ;
+
+내가 원한 코드블럭

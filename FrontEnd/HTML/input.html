@@ -1,0 +1,81 @@
+<!-- https://team-everywhere.gitbook.io/frontend/readme-2/html#undefined-56 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://www.example.com/">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" href="./html.png">
+    <title>HTML 시작하기</title>
+</head>
+<body>
+    <h1>사용자 등록 양식</h1>
+
+    <form action="/submit-form" method="POST">
+
+        <!-- 사용자 이름 입력 -->
+        <label for="username">사용자 이름:</label>
+        <input type="text" id="username" name="username" placeholder="사용자 이름 입력" maxlength="20" required>
+        <br><br>
+
+        <!-- 이메일 입력 -->
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" placeholder="example@example.com" required>
+        <br><br>
+
+        <!-- 비밀번호 입력 -->
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" placeholder="비밀번호 입력" minlength="8" required>
+        <br><br>
+
+        <!-- 나이 입력 -->
+        <label for="age">나이:</label>
+        <input type="number" id="age" name="age" min="1" max="120" placeholder="나이 입력">
+        <br><br>
+
+        <!-- 성별 선택 -->
+        <label>성별:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">남성</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">여성</label>
+        <br><br>
+
+        <!-- 좋아하는 과일 선택 -->
+        <label for="fruits">좋아하는 과일:</label>
+        <select id="fruits" name="fruits[]" required>
+            <optgroup label="열대 과일">
+                <option value="mango">망고</option>
+                <option value="banana">바나나</option>
+            </optgroup>
+            <optgroup label="기타 과일">
+                <option value="apple">사과</option>
+                <option value="cherry">체리</option>
+            </optgroup>
+        </select>
+        <br><br>
+
+        <!-- 자기소개 -->
+        <label for="bio">자기소개:</label>
+        <textarea id="bio" name="bio" rows="4" cols="50" placeholder="자기소개를 입력하세요"></textarea>
+        <br><br>
+
+        <!-- 파일 업로드 -->
+        <label for="profilePic">프로필 사진 업로드:</label>
+        <input type="file" id="profilePic" name="profilePic" accept="image/*">
+        <br><br>
+
+        <!-- 작업 진행 상황 -->
+        <label for="uploadProgress">업로드 진행 상황:</label>
+        <progress id="uploadProgress" value="70" max="100"></progress> 70%
+        <br><br>
+
+        <!-- 양식 제출 -->
+        <button type="submit">제출</button>
+        <button type="reset">초기화</button>
+
+    </form>
+</body>
+</html>
