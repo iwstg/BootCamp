@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 클론코딩 실습</title>
+    <link rel="stylesheet" href="CloneCording.css">
+</head>
+<body>
+    
+    <section class="head-img">
+        <div class="mainpages">
+            <h1>회원가입</h1>
+        </div>
+    </section>
+
+    <section class="center-page">
+        <div class="panels">
+            <div class="items">로그인</div>
+            <div class="items">도움말</div>
+            <div class="items">약관</div>
+        </div>
+
+        <div class="register-page">
+            <div class="register">
+                <div class="items">
+                    <img id="profileImage" src="profilePic" width="150">
+                    <label for="name">이름:</label><br>
+                    <input type="text" id="name" class="largebox">
+                </div>
+                
+                <div class="items">
+                    <label for="email">이메일:</label><br>
+                    <input type="text" id="email" class="largebox">
+                </div>
+
+                <div class="items">
+                    <label for="password">비밀번호:</label><br>
+                    <input type="password" id="password" class="largebox">
+                </div>
+
+                <div class="items">
+                    <span>성별:</span>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">남성</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">여성</label>
+                </div>
+
+                <div class="items">
+                    <input type="checkbox">
+                    <label>약관에 동의합니다.</label>
+                </div>
+
+                <div class="items">
+                    <button>회원가입</button>    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="under-page">
+        c 2024 MyWebsite | 연락처: email@example.com
+    </section>
+</body>
+</html>
