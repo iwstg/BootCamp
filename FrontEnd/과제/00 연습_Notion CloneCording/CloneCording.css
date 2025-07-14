@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 상단 박스 구역 시작*/
+.TopContainer{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr auto 1fr;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: rgba(255, 255, 0, 0.568);
+}
+
+/* 네비게이터 영역 */
+.TopNavigator{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    background-color: rgba(255, 0, 255, 0.568);
+}
+
+/* 상단 로고 구역 */
+
+.TopLogoImage{
+    width: 40px;
+    background-color: rgba(0, 0, 255, 0.568);
+}
+
+.TopNavigatorTab{
+    width: auto;
+    background-color: rgba(255, 0, 0, 0.568);
+    display:flex;
+}
+
+.TopNavigatorTab2{
+    width: 30%;
+    margin-left: auto;
+    align-content: center;
+    background-color: rgba(255, 0, 0, 0.568);
+    display:flex;
+}
+
+
+.items{
+    justify-items: center;
+    align-content: center;
+    margin-right: 10px;
+}
+
+/* 메인 컨텐츠 구역 시작*/
+.MainLayoutArea{
+    margin: 0px 15px;
+
+    background-color: #80ff9c;
+}
