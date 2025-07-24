@@ -112,9 +112,8 @@ VS코드에서 파트부분 잘 안보여서... 추가했습니다
     display:flex;
     gap: 16px;
     align-items: center;
-    
-    
 }
+
 
 /* 버튼 구현 부분 */
 .Btn{
@@ -129,6 +128,12 @@ VS코드에서 파트부분 잘 안보여서... 추가했습니다
     border: 1px solid #FFF0;
 }
 
+/* 상단 로그인 버튼 */
+.NotionLoginBtn{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
 
 .items{    
     justify-items: center;
@@ -240,12 +245,6 @@ VS코드에서 파트부분 잘 안보여서... 추가했습니다
 }
 
 /* Main에서 사용되는 버튼 */
-
-.NotionLoginBtn{
-    display: flex;
-    gap: 12px;
-    align-items: center;
-}
 
 .NotionStartForFree{
     color: #FFF;
