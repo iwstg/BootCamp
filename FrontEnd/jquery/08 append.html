@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Append</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <ul id="list">
+        <li style="font-size: 50px;">Item 1</li>
+        <li style="font-size: 50px;">Item 2</li>
+    </ul>
+    <button id="addItemBtn" style="width: 100px; height: 50px;">Item 추가하기</button>
+    <script>
+        $(document).ready(function() {
+            $('#addItemBtn').click(function() {
+                $('#list').append('<li style="font-size: 50px;">New Item</li>');
+            });
+        });
+    </script>
+</body>
+</html>

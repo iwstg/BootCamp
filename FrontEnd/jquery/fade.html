@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <button id="showbtn">보이기</button>
+    <button id="hidebtn">숨기기</button>
+
+    <div id="box" style="width: 200px; height: 100px; background-color: skyblue; margin-top: 20px; border-radius: 10px; display: none">
+    </div>
+
+
+    <script>
+        $("#showbtn").click(function(){
+            $("#box").fadeIn();
+        })
+
+        $("#hidebtn").click(function(){
+            $("#box").fadeOut();
+        })
+    </script>
+</body>
+</html>

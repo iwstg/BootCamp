@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 실습</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>안녕하세요</h1>
+    <img src="" alt="이미지입니다" width="200px" height="200px">
+    <button id="btn">버튼</button>
+    <button id="addbtn">추가</button>
+    <button id="delbtn">삭제</button>
+    <button id="togglebtn">전환</button>
+    <button id="addImgbtn">이미지추가</button>
+    <p></p>
+    <span></span>
+
+    <script>
+        
+        $(document).ready(function() { // 문서가 로드됐을 때
+            $("h1").css("color", "red");
+            
+            //click();
+            $("#btn").click(function(){
+                $("h1").css("color", "blue");
+            });
+
+            $("#addbtn").click(function(){
+                $("h1").show();
+            });
+
+            $("#delbtn").click(function(){
+                $("h1").hide();
+            })
+
+            //toggle(); show/hide의 토글 기능
+            $("#togglebtn").click(function(){
+                $("h1").toggle();
+            })
+
+            //attr(); 속성부여
+            $("#addImgbtn").click(function(){
+                $("img").attr("src"); // 속성만 입력하고 값을 안넣으면 값을 가져옴.
+                console.log("img의 src 속성 값: " + $("img").attr("src"));
+
+                $("img").attr("src", "https://miro.medium.com/v2/resize:fit:860/0*eFomJUFua8tuqe8g.png");
+                console.log("img의 src 속성 값: " + $("img").attr("src"));
+            })
+
+            //html();
+            $("p").click(function(){
+                alert($("p").html()); // html()안에 인자를 넣어주지않으면 값을 반환함
+            });            
+            // html()은 태그까지 추가가 가능
+            $("p").html("<h1>텍스트추가</h1>");
+
+            //text();
+            $("span").click(function(){
+                alert($("span").text()); // text()안에 인자를 넣어주지않으면 값을 반환함
+            });
+            $("span").text("<h2>텍스트 추가<h2>"); // 태그까지 전부 텍스트로 들어감
+            $("span").text("텍스트 추가");
+        });
+
+        
+
+    </script>
+    
+</body>
+</html>

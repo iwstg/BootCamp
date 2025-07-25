@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <!-- jQuery CDN 링크 추가 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>text() 함수</h1>
+    <p style="color: cyan; font-size: 50px;">텍스트입니다.</p>
+
+    <script>
+        $('h1').click(function(){
+            $('p').text("새로운 텍스트입니다.");
+        })
+    </script>
+</body>
+</html>

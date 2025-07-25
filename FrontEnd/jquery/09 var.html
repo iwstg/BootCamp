@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery val</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <input type="text" id="name" value="John">
+    <button id="getValue">값 가져오기</button>
+    <script>
+        $(document).ready(function() {
+            // 값 가져오기
+            $('#getValue').click(function() {
+            alert($('#name').val());
+            });
+        });
+    </script>
+</body>
+</html>

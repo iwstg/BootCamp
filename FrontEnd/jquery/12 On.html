@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery On</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="showAlert">Alert 호출하기</button>
+    <script>
+        $(document).ready(function() {
+            $('#showAlert').on('click', function() { // "이벤트 핸들러 연결하기"
+                alert('Alert을 호출합니다.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <ul id="list">
+        <li>청소하기</li>
+        <li>공부하기</li>
+    </ul>
+    <input type="text" id="myInput">
+    <button id="addbtn">목록추가</button>
+
+    <script>
+        // // append() 고정 요소 추가하기 (마지막 자식으로 추가함)
+        // $("#addbtn").click(function(){
+        //     $("#list").append("<li>녹화 강의 듣기</li>")
+        // })
+
+        // input value 가져오기
+        $("#addbtn").click(function(){
+            const inputVal = $("#myInput").val();
+            console.log("입력값: " + inputVal);
+
+            // 만약 입력값이 없는경우 (공백인 경우)
+            if($("#myInput").val() === ""){
+                alert("값이 없습니다");
+                return;
+            }
+            $("#list").append(`<li>${$("#myInput").val()}</li>`);
+
+            // 목록 추가 이후 값 삭제
+            $("#myInput").val("");
+
+            
+        });
+    </script>
+    
+</body>
+</html>

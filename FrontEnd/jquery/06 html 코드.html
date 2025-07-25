@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <!-- jQuery CDN 링크 추가 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>html() 함수로 <br>아래 텍스트 변경하기</h1>
+    <p style="color: orange; font-size: 50px;">Test 텍스트</p>
+
+    <!-- text()와 다른점은 태그마저 가져온다는것. 보안에 취약함 -->
+    <script>
+        $(document).ready(function() {
+            $('h1').click(function(){
+                $('p').html('<p>HTML 텍스트</p>')
+            })
+        });
+    </script>
+</body>
+</html>
