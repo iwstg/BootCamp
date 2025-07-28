@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+    <div id="root">
+        <!-- 내가만든 컴포넌트를 여기에 띄워줘 -->
+
+    </div>
+
+    <script type="text/babel">
+        
+        function Child() {
+            return(
+                <div>
+                    <h5>자식입니다.</h5>
+                    <p>여러줄이라고 가정</p>
+                </div>
+            );
+        }
+
+        function MyApp(){
+            return (
+                <div>
+                    <h1>Hello!</h1>
+                    {Child()}
+                    {Child()}
+                    {Child()}
+                    {Child()}
+                    {Child()}
+                </div>
+            );
+        }
+
+        ReactDOM.render(<MyApp />, document.getElementById("root"));
+    </script>
+    
+</body>
+</html>
