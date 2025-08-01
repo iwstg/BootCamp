@@ -22,7 +22,6 @@ export default function App() {
       {/* css module 사용. 설치 불필요 */}
       <Button color="blue"/>
       <hr />
-      
     </> 
   );
 }

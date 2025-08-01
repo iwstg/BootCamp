@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import LifecycleDemo from './LifecycleDemo';
 import { useState } from "react";

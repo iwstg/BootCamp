@@ -17,6 +17,7 @@ const Child = (props) => {
             <input type="text" onChange={changeHandler} />
             {/* 버튼 모듈로 가져옴 */}
             <button className={styles.btn}>버튼</button>
+            
         </>
     );
 };
