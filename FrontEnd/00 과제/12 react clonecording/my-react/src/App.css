@@ -1,0 +1,418 @@
+*, :after, :before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+/* 
+VS코드에서 파트부분 잘 안보여서... 추가했습니다 
+(https://sublime.tools/ko/%EB%8C%80%EC%9A%A9%EB%9F%89-%ED%85%8D%EC%8A%A4%ED%8A%B8/)
+
+
+██╗░░██╗███████╗░█████╗░██████╗░███████╗██████╗░
+██║░░██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+███████║█████╗░░███████║██║░░██║█████╗░░██████╔╝
+██╔══██║██╔══╝░░██╔══██║██║░░██║██╔══╝░░██╔══██╗
+██║░░██║███████╗██║░░██║██████╔╝███████╗██║░░██║
+╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═════╝░╚══════╝╚═╝░░╚═╝
+*/
+
+/* 상단 박스 구역 시작*/
+.TopContainer{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr auto;
+    align-items: center; 
+    /* background-color: rgba(255, 255, 0, 0.568); */
+}
+
+.TopNavigator {
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 16px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    padding: 5px 10px;
+}
+
+
+/* 상단 로고 구역 */
+.TopLogoImage{
+    justify-self: start;
+    /* background-color: rgba(0, 0, 255, 0.568); */
+    /* grid-column: 1; */
+}
+
+
+/* 상단 네비게이션 요소 구역 */
+.TopNavigatorTab{
+    grid-column: 2;
+    /* background-color: rgba(255, 0, 0, 0.568); */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.TopNavigatorTab .items{
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 드롭박스 부분 */
+.TopNavList{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* color: var(--color-text); */
+    font: inherit;
+    align-items: center;
+}
+
+.TopNavListNotionImg{
+    width: .65em;
+    height: .65em;
+    fill: currentColor;
+    /* background-color: #0075de; */
+    white-space: nowrap;
+}
+
+.TopNavListNotionImg svg{
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: inherit;
+    flex-shrink: 0;
+}
+
+
+
+/* 상단 로그인 버튼 부분 */
+.TopNavigatorTab2{
+    grid-column: 3;
+    justify-self: end;
+    /* background-color: rgba(255, 0, 0, 0.568); */
+    display:flex;
+    gap: 16px;
+    align-items: center;
+}
+
+
+/* 버튼 구현 부분 */
+.Btn{
+    min-height: 2.25rem;
+    padding: 0.25rem .875rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.5rem;
+    border: 1px solid #FFF0;
+}
+
+/* 상단 로그인 버튼 */
+.NotionLoginBtn{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.items{    
+    justify-items: center;
+    align-content: center;
+}
+
+.TopNotionStartForFree{
+    color: #FFF;
+    background-color: #0075de;
+    width: 100%;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+/* 
+███╗░░░███╗░█████╗░██╗███╗░░██╗
+████╗░████║██╔══██╗██║████╗░██║
+██╔████╔██║███████║██║██╔██╗██║
+██║╚██╔╝██║██╔══██║██║██║╚████║
+██║░╚═╝░██║██║░░██║██║██║░╚███║
+╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝╚═╝░░╚══╝
+
+*/
+/* 메인 컨텐츠 구역 시작*/
+.MainLayoutArea{
+    display:flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    padding: 0 round(up, 7.22223%, .2rem);
+    /* background-color: #80ff9c; */
+
+    /* footer부분 경계선 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+}
+
+.MainPageArea{
+    width: 100%;    
+    max-width: 1250px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.MainPageBanner{
+    max-width: 100%;
+    min-height: 400px;
+    max-height: 720px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 65px 0;    
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 24px
+}
+
+.MainPageBannerText{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 450px;
+    justify-content: space-between;
+    /* background-color: #7307ff; */
+    margin: 0;
+    padding: 0;
+    text-wrap: balance;    
+    gap: 16px;
+    
+}
+
+.MainPageBannerText > h1{
+    width: 100%;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 4rem;
+    letter-spacing: -0.1328125rem;
+}
+
+.MainPageBannerText > h2{
+    width: 100%;
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    letter-spacing: -0.015625rem;
+}
+
+.MainPageBannerNav{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.MainPageBannerImg{
+    order: 0;
+    --image-top-offset: -64px;
+    max-width: 50%;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+
+    /* background-color: #ff7979; */
+    /* width: 100%;
+    align-items: center;
+    
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px; */
+
+    
+}
+
+/* Main에서 사용되는 버튼 */
+
+.NotionStartForFree{
+    color: #FFF;
+    background-color: #0075de;
+    min-height: 2.875rem;
+    padding: .6875rem 1.25rem;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+/* 
+███████╗░█████╗░░█████╗░████████╗███████╗██████╗░
+██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+█████╗░░██║░░██║██║░░██║░░░██║░░░█████╗░░██████╔╝
+██╔══╝░░██║░░██║██║░░██║░░░██║░░░██╔══╝░░██╔══██╗
+██║░░░░░╚█████╔╝╚█████╔╝░░░██║░░░███████╗██║░░██║
+╚═╝░░░░░░╚════╝░░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝
+*/
+
+/* 하단 footer 영역 */
+.Footer{
+    margin: auto 34.5px;
+    padding: 80px 125px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: yellow; */
+}
+
+.FooterBanner{
+    width: 100%;
+    max-width: 1250px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: space-between;
+    /* background-color: #dd4a4ab2; */
+}
+
+/* 하단 패널 옆 이미지부분 */
+.FooterTop{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+    gap: 24px;
+
+    /* background-color: #0075de; */
+}
+
+.FooterLogo{
+    width: 10rem;
+    height: 48px;
+}
+
+.FooterNotionImg{
+    width: 30px;
+    height: 30px;
+}
+
+/* 하단 패널 리스트부분 */
+.FooterBottom{
+    width: 75%;
+}
+
+.FooterPanel{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(10px, 1fr));
+}
+
+.FooterBottom ul{
+    margin: 0 0 36px;
+    padding: 0;
+    list-style: none;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.FooterBottom li{
+    display: block;
+    cursor: pointer;
+    margin-top: .4rem;
+    line-height: 1.35rem;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.FooterOtherLink{    
+    display: flex;
+    padding: 0;
+    gap: 2px;
+    /* background-color: black; */
+}
+
+.FooterOtherLink a{
+    font-weight: inherit;
+    color: inherit;
+    height: auto;
+    padding: .375rem;
+}
+
+.FooterOtherLink ul{
+    list-style: none;
+    display: flex;
+    margin: -6px;
+    padding: 0;
+    gap: 2px;
+}
+
+.FooterOtherLink li{
+    display: list-item;
+    text-align: center;
+    unicode-bidi: isolate;
+}
+
+.linkbtn{
+    border: 1px solid #0000;
+    background: #0000;
+    text-decoration: none;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
