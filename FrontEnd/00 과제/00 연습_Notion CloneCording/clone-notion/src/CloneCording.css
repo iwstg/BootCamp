@@ -162,6 +162,7 @@ VS코드에서 파트부분 잘 안보여서... 추가했습니다
 .MainLayoutArea{
     margin: 0 auto;
     width: 100%;
+    max-width: 1250px;
     min-height: 100%;
     height: auto;
     padding: 0 round(up, 7.22223%, .2rem);
@@ -172,20 +173,23 @@ VS코드에서 파트부분 잘 안보여서... 추가했습니다
 }
 
 .MainPageArea{
+    width: 100%;
     display: inline-flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 32px;
 }
 
 .MainPageBanner{
     max-width: 100%;
     min-height: 400px;
+    max-height: 720px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 65px auto;    
+    padding: 65px 0;    
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 24px
 }
 
 .MainPageBannerText{

@@ -2,12 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import Carousels from './Carousel';
 import CustomerSounds from './companyReview';
+import AppsList from './CombineAppList';
 
 function App() {
   
   return (
         <>
-      <section className="TopContainer">
+        {/* HEADER 상단 네비게이션 바 */}
+      <section className="TopContainer fixed top-0 left-0 w-full bg-white shadow z-50">
         <nav className="TopNavigator">
           <div className="TopLogoImage">
             <img id="profileImage" src="https://img.icons8.com/?size=100&id=nZoJhBpPfVev&format=png&color=000000" width="40" />
@@ -55,13 +57,13 @@ function App() {
             </a>
           </div>
           <div className="TopNavigatorTab2">
-            <span className="Btn NotionLoginBtn">
-              <a style={{ width: "max-content" }}>로그인</a>
-            </span>
-            <a className="Btn TopNotionStartForFree">Notion 무료로 시작하기</a>
+            <span className="w-fit p-2 rounded-lg cursor-pointer hover:bg-gray-200">로그인</span>
+            <a className="Btn TopNotionStartForFree hover:bg-blue-700">Notion 무료로 시작하기</a>
           </div>
         </nav>
       </section>
+
+      {/* BODY(MAIN) 영역 */}
       <main className="MainLayoutArea">
         <section className="MainPageArea">
             {/* 메인페이지 - 배너 */}
@@ -71,9 +73,9 @@ function App() {
 
                     <h2>팀이 모든 답을 찾고, 반복 업무를 자동화하며, 프로젝트를 완료할 수 있는 하나의 공간.</h2>
 
-                    <nav className="MainPageBannerNav">
-                        <a className="Btn NotionStartForFree">Notion 무료로 시작하기</a>
-                        <button>데모 요청하기</button>
+                    <nav className="MainPageBannerNav w-full">
+                        <a className="Btn NotionStartForFree hover:bg-blue-700">Notion 무료로 시작하기</a>
+                        <button className="py-[.6875rem] px-[1.25rem] w-fit border rounded-lg bg-blue-50 text-blue-700 outline-blue-50 font-[500] hover:bg-blue-100">데모 요청하기</button>
                     </nav>
                 </header>
                 <div className="MainPageBannerImg">
@@ -96,83 +98,136 @@ function App() {
             {/* 메인페이지 - Grid 구조 */}
             <section className="grid grid-col-2 gap-5">
 
-                <div className="flex flex-col border-2 border-red-50 rounded bg-red-50">
-                  <div className="p-4 w-full rounded-lg bg-red-50 텍스트박스">
-                    <div className="박스 상단">
-                      <div className="flex gap-4">녹음기 사진 ai노트 new</div>
+                <div className="flex flex-col border-2 border-red-50 rounded-2xl bg-red-50 overflow-hidden cursor-pointer hover:border-red-300 transition-colors duration-300" title="사용해보기">
+                  <div className="p-4 w-full rounded-lg bg-red-50">
+                    <div className="">
+                      <div className="flex gap-2 items-center p-2">
+                          <img className="" src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F2RmBatRiqNZT7mu44Qoifl%2F6a834087f3d0a018fa5b14a5bae00582%2Fai-meeting-notes-icon.png&w=32&q=75" />
+                          <p className="font-[600] text-sm">AI 노트</p>
+                          <span className="border bg-white rounded-[8px] opacity-80 text-xs">New</span>
+                      </div>
                     </div>
-                    <div className="flex justify-between">
-                      <div className="flex-start">늘 완벽하게 작성되는 회의록.</div>
-                      <div className="flex-end">화살표</div>
+                    <div className="flex justify-between px-2">
+                      <div className="flex-start font-bold text-2xl mb-4">늘 완벽하게 작성되는 회의록.</div>
+                      <div className="flex-end">
+                        <svg height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32">
+                          <svg viewBox="0 0 33 32" style={{ width: "100%", height: "100%", display: "block", fill: "inherit", flexshrink: "0"}}>
+                            <rect width="31.2" height="31.2" x=".9" y=".4" rx="15.6" stroke="#F6F5F4" stroke-width="1" fill="white"></rect>
+                            <path fill="#000" d="m23.769 16-7.2 7.2-1.272-1.272 5.028-5.028H9.297v-1.8h11.028l-5.028-5.028L16.569 8.8l7.2 7.2Z"></path>
+                          </svg>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="하단그림플레이트">
+                  <div className="">
                     <img src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F4zmmc2Sts2j750iWG4cz9C%2Fed6b4c918bd5c320bbe28df3519c6fa2%2Fbento_1.ko-KR.png&w=1920&q=75" alt="노션ai노트"></img>
                   </div>
                 </div>
 
-                <div className="flex flex-col border-2 border-blue-50 rounded bg-blue-50">
-                  <div className="p-4 w-full rounded-lg bg-blue-50 텍스트박스">
-                    <div className="박스 상단">
-                      <div className="flex gap-4">돋보기 기업 전용 검색 new</div>
+                <div className="flex flex-col border-2 border-blue-50 rounded-2xl bg-blue-50 overflow-hidden cursor-pointer hover:border-blue-300 transition-colors duration-300" title="사용해보기">
+                  <div className="p-4 w-full rounded-lg bg-blue-50">
+                    <div className="">
+                      <div className="flex gap-2 items-center p-2">
+                        <img src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F4Jnz1LdPqjujdW77jmtWTh%2Fa055aeb5baa46435d5db493456991bff%2Ficon_bento_search.png&w=32&q=75" />
+                        <p className="font-[600] text-sm">기업 전용 검색</p>
+                        <span className="border bg-white rounded-[8px] opacity-80 text-xs">New</span>
+                      </div>
                     </div>
                     <div className="flex justify-between">
-                      <div className="flex-start">모든 검색을 한번에.</div>
-                      <div className="flex-end">화살표</div>
+                      <div className="flex-start font-bold text-2xl mb-4">모든 검색을 한번에.</div>
+                      <div className="flex-end">
+                        <svg height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32">
+                          <svg viewBox="0 0 33 32" style={{ width: "100%", height: "100%", display: "block", fill: "inherit", flexshrink: "0"}}>
+                            <rect width="31.2" height="31.2" x=".9" y=".4" rx="15.6" stroke="#F6F5F4" stroke-width="1" fill="white"></rect>
+                            <path fill="#000" d="m23.769 16-7.2 7.2-1.272-1.272 5.028-5.028H9.297v-1.8h11.028l-5.028-5.028L16.569 8.8l7.2 7.2Z"></path>
+                          </svg>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="하단그림플레이트">
+                  <div className="">
                     <img src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F2ZvcfZ5FYoh5mWSzqBAoqI%2F9d840ca56eed36ff543cb5b9ba0469d2%2Fbento_2.ko-KR.png&w=1920&q=75" alt="노션기업전용검색"></img>
                   </div>
                 </div>
 
 
-                <div className="col-span-2 flex border-2 border-yellow-50 rounded bg-yellow-50">
-                  <div className="p-4 flex flex-col w-full rounded-lg bg-yellow-50 텍스트박스">
-                    <div className="박스 상단">
-                      <div className="flex gap-4">과녁 프로젝트</div>
+                <div className="min-h-[260px] col-span-2 flex border-2 border-yellow-50 rounded-2xl bg-yellow-50 overflow-hidden cursor-pointer hover:border-yellow-300 transition-colors duration-300" title="시작하기">
+                  <div className="p-4 flex flex-col w-full rounded-lg bg-yellow-50">
+                    <div className="">
+                      <div className="flex gap-2 items-center p-2">
+                        <img src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F1vDd1Xq1bijUBXwf3p33RL%2F70cae92019d022cc26708127829459ae%2Ficon_bento_projects.png&w=32&q=75" />
+                        <p className="font-[600] text-sm">프로젝트</p>
+                      </div>
                     </div>
                     <div className="flex flex-col glow-1 items-start h-full gap-2">
-                      <div className="">모든 계획을 순조롭게.</div>
-                      <div className="self-auto mt-auto">화살표</div>
+                      <div className="font-bold text-2xl">모든 계획을 순조롭게.</div>
+                      <div className="self-auto mt-auto">
+                        <svg height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32">
+                          <svg viewBox="0 0 33 32" style={{ width: "100%", height: "100%", display: "block", fill: "inherit", flexshrink: "0"}}>
+                            <rect width="31.2" height="31.2" x=".9" y=".4" rx="15.6" stroke="#F6F5F4" stroke-width="1" fill="white"></rect>
+                            <path fill="#000" d="m23.769 16-7.2 7.2-1.272-1.272 5.028-5.028H9.297v-1.8h11.028l-5.028-5.028L16.569 8.8l7.2 7.2Z"></path>
+                          </svg>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="하단그림플레이트">
-                    <img src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2FsBvJS45PQCJBRR1hfIZH6%2Fc19f07720c52e4aa6db37035699e74de%2Fbento_3.ko-KR.png&w=1920&q=75" alt="노션프로젝트"></img>
+                  <div className="flex">
+                    <img className="mt-auto" src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2FsBvJS45PQCJBRR1hfIZH6%2Fc19f07720c52e4aa6db37035699e74de%2Fbento_3.ko-KR.png&w=1920&q=75" alt="노션프로젝트"></img>
                   </div>
                 </div>
 
 
-                <div className="flex flex-col border-2 border-gray-50 rounded bg-gray-50">
-                  <div className="p-4 w-full rounded-lg bg-gray-50 텍스트박스">
-                    <div className="박스 상단">
-                      <div className="flex gap-4">종이비행기 Notion 메일 new</div>
+                <div className="flex flex-col border-2 border-gray-50 rounded-2xl bg-gray-50 overflow-hidden cursor-pointer hover:border-gray-300 transition-colors duration-300" title="무료 다운로드">
+                  <div className="p-4 w-full rounded-lg bg-gray-50">
+                    <div className="">
+                      <div className="flex gap-2 items-center p-2">
+                        <img src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F3ZUI2YU0fvfX5iqzaO6vy5%2F116f6227f7a97a126cac46377c0b6ea2%2Ficon_bento_mail.png&w=32&q=75" /> 
+                        <p className="font-[600] text-sm">Notion 메일</p>
+                        <span className="border bg-white rounded-[8px] opacity-80 text-xs">New</span>
+                      </div>
                     </div>
                     <div className="flex justify-between">
-                      <div className="flex-start">나를 이해하는 수신함.</div>
-                      <div className="flex-end">화살표</div>
+                      <div className="flex-start font-bold text-2xl mb-4">나를 이해하는 수신함.</div>
+                      <div className="flex-end">
+                        <svg height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32">
+                          <svg viewBox="0 0 33 32" style={{ width: "100%", height: "100%", display: "block", fill: "inherit", flexshrink: "0"}}>
+                            <rect width="31.2" height="31.2" x=".9" y=".4" rx="15.6" stroke="#F6F5F4" stroke-width="1" fill="white"></rect>
+                            <path fill="#000" d="m23.769 16-7.2 7.2-1.272-1.272 5.028-5.028H9.297v-1.8h11.028l-5.028-5.028L16.569 8.8l7.2 7.2Z"></path>
+                          </svg>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="하단그림플레이트">
+                  <div className="">
                     <img src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F3WUVrdpc8WmnGJooDLXPR7%2Fc4f16af2e58912c2c5733e167e50cd83%2Fbento_4.ko-KR.png&w=3840&q=75" alt="노션메일"></img>
                   </div>
-                </div>
-                <div className="flex flex-col border-2 border-green-50 rounded bg-green-50">
-                  <div className="p-4 w-full rounded-lg bg-green-50 텍스트박스">
-                    <div className="박스 상단">
-                      <div className="flex gap-4">박스 비즈니스 박스</div>
+                </div> 
+                <div className="flex flex-col border-2 border-green-50 rounded-2xl bg-green-50 overflow-hidden cursor-pointer hover:border-green-300 transition-colors duration-300" title="템플릿 다운로드">
+                  <div className="p-4 w-full rounded-lg bg-green-50">
+                    <div className="">
+                      <div className="flex gap-2 items-center p-2">
+                        <img src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F7x3FVMsVsqlTTYDAC8PEpD%2F3a305e02cf4577a6d7b2acf0b979bb66%2Ficon_bento_templates.png&w=32&q=75" />
+                        <p className="font-[600] text-sm">비즈니스 박스</p>
+                      </div>
                     </div>
                     <div className="flex justify-between">
-                      <div className="flex-start">회사 운영 전반을 원활하게.</div>
-                      <div className="flex-end">화살표</div>
+                      <div className="flex-start font-bold text-2xl mb-4">회사 운영 전반을 원활하게.</div>
+                      <div className="flex-end">
+                        <svg height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32">
+                          <svg viewBox="0 0 33 32" style={{ width: "100%", height: "100%", display: "block", fill: "inherit", flexshrink: "0"}}>
+                            <rect width="31.2" height="31.2" x=".9" y=".4" rx="15.6" stroke="#F6F5F4" stroke-width="1" fill="white"></rect>
+                            <path fill="#000" d="m23.769 16-7.2 7.2-1.272-1.272 5.028-5.028H9.297v-1.8h11.028l-5.028-5.028L16.569 8.8l7.2 7.2Z"></path>
+                          </svg>
+                        </svg>
+                      </div>
                     </div>
                   </div>
                   
-                  <div className="하단그림플레이트">
+                  <div className="">
                     <img src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F4m5lpqe7uGKqVeCbxJTzs8%2F7b7350617571ee4598f20a318c7c4801%2Fbento_5.ko-KR.png&w=1920&q=75" alt="노션비지니스"></img>
                   </div>
                 </div>
@@ -214,18 +269,19 @@ function App() {
               <div className="flex justify-center items-center rounded-xl bg-gray-100">
                   <div className="w-full p-16 grid grid-cols-3 grid-rows-3 gap-3 divide-y divide-gray-300">
                       <div className="col-span-2 row-span-2 m-2 flex flex-col justify-around">
-                        <div className="px-5">
-                          <img className="w-32" src="/res/OpenAI.png" alt="openAI"></img>
+                        <div className="">
+                          <img className="w-28" src="/res/OpenAI.png" alt="openAI"></img>
                         </div>
                         <div>
-                          <span>Notion은 하나의 플랫폼에서 모든 업무를 가능하게 하는 강력한 도구입니다.</span>
+                          <span className="relative before:content-['˝'] before:absolute before:-left-4 before:top-0 text-4xl font-serif">
+                            Notion은 하나의 플랫폼에서 모든 업무를 가능하게 하는 강력한 도구입니다.˝</span>
                         </div>
-                        <div>더보기 →</div>
+                        <a className='w-fit hover:underline hover:text-blue-500 cursor-pointer font-[300]'>더 보기 →</a>
                       </div>
 
                       {/* 누를경우 모달로 동영상 재생하는 페이지 하나 등장해야함 */}
                       <div className="row-span-2">
-                        <img className="h-full border rounded-xl" src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F28Oz1efdtQCyLG1ocTdmHK%2F0b574e8bdb1c0d5d8b41e80fdb221595%2FHomepage_25_Thumbnail.jpg&w=384&q=75" alt="소개 동영상"></img>
+                        <img className="w-full border rounded-xl" src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F28Oz1efdtQCyLG1ocTdmHK%2F0b574e8bdb1c0d5d8b41e80fdb221595%2FHomepage_25_Thumbnail.jpg&w=384&q=75" alt="소개 동영상"></img>
                       </div>
                       {/* 고객의 소리 컴포넌트 */}
                       <CustomerSounds />
@@ -266,12 +322,97 @@ function App() {
                       <p><img className="h-4" src="logo192.png"/></p>#3년 연속 지식 베이스 1위 (G2)</p>                    
                   </div>
                 </div>
-              </div>
-        </section>
+            </div>
 
-        
+            {/* 메인페이지 - 하단 한번의 검색으로 무엇이든 찾기 */}
+            <div className="flex justify-center gap-4 mt-16 pt-14">
+              <div className="flex flex-col gap-2 w-2/5">
+                <h1 className="text-balance font-bold text-[2.625rem] leading-tight tracking-tight mb-1">한 번의 검색으로 무엇이든 찾기</h1>
+                <p className="text-sm font-[500] mb-4">Notion 내에서 회사의 모든 지식과 앱을 검색할 수 있습니다.</p>
+                <div className="flex items-center mb-8">
+                  <button className="bg-blue-600 text-white font-bold py-[6px] px-[16px] mr-4 rounded-lg">무료 체험하기</button>
+                  <a href="" className="text-blue-500 hover:underline">데모 요청하기 →</a>
+                </div>
+                <div className="flex justify-start gap-10">
+                  <ul className="columns-2">
+                    <AppsList />
+                  </ul>
+                </div>
+              </div>
+
+              <div className="w-3/5">
+                <img className="w-full" src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F1WQxz3QGRQ39BXXtHbC4Hq%2Fe0ec7a9113e0e0629ab2af60fb982318%2FEnterpriseSearch_-_Landscape_-_en-US.jpg&w=3840&q=75" />
+              </div>
+            </div>
+
+            {/* 메인페이지 - 하단 Notion 시작하기 */}
+            <div className='py-24'>
+            <div className="grid grid-cols-2 grid-rows-2 gap-8 h-[680px]">
+              <div className="row-span-2 bg-gray-100 border border-gray-200 rounded-xl overflow-hidden">
+                <div className="flex flex-col justify-between gap-3 h-full">
+                  <div className="flex flex-col p-6 gap-2">
+                    <div>
+                      노션로고
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-bold text-2xl">Notion 시작하기</span>
+                      <span className="font-[500]">나만의 AI 워크스페이스</span>
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="w-[250px] my-4">
+                        <div className="border bg-black text-white rounded-lg py-1 w-[260px] px-5 text-wrap flex justify-center items-center cursor-pointer hover:bg-gray-800 transition-colors duration-300">
+                            <img className="h-8 w-8 inline" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg" />
+                              <a className="pl-2">Windows로 다운로드하기</a>
+                          </div>
+                      </div>
+                      <div className="border bg-black text-white rounded-lg py-1 w-[260px] px-5 text-wrap flex justify-center items-center cursor-pointer hover:bg-gray-800 transition-colors duration-300">
+                          <img className="h-8 w-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Microsoft_Store.svg/1030px-Microsoft_Store.svg.png" />
+                        <a className="pl-2">
+                          Download from the <b>Microsoft Store</b>
+                        </a>
+                        </div>
+                    </div>
+                  </div>
+                  <div className=''>
+                    <img className="w-fit" src="https://www.notion.com/_next/image?url=%2Ffront-static%2Fdownloads%2Fnotion%2Fen-US.png&w=1920&q=75" />
+                  </div>
+                </div>
+              </div>
+              <div className="flex border border-gray-200 rounded-xl overflow-hidden justify-between bg-gray-100 ">
+                <div className="flex flex-col p-6 gap-2">
+                  종이비행기모양
+                  <div className="flex flex-col">
+                    <span className="font-bold text-2xl">Notion 메일</span>
+                    <span className="font-[500]">나를 이해하는 수신함.</span>
+                  </div>
+                  <button className="border bg-white rounded-lg py-1 px-5 hover:bg-gray-100 w-fit">다운로드하기</button>
+                </div>
+                <div className='h-fit mt-auto'>
+                  <img className="w-[300px]" src="https://www.notion.com/_next/image?url=%2Ffront-static%2Fdownloads%2Fmail%2Fen-US.png&w=384&q=75" />
+                </div>
+              </div>
+              <div className="flex border border-gray-200 rounded-xl justify-between bg-gray-100 overflow-hidden">
+                <div className="flex flex-col p-6 gap-2"> 
+                  캘린더모양
+                  <div className="flex flex-col">
+                    <span className="font-bold text-2xl">Notion 캘린더</span>
+                    <span className="font-[500]">일과 시간을 함께 관리하는 곳.</span>
+                  </div>
+                  <button className="border bg-white rounded-lg py-1 px-5 hover:bg-gray-100 w-fit">다운로드하기</button>
+                </div>
+                <div className="h-fit mt-auto">
+                  <img className="w-[300px]" src="https://www.notion.com/_next/image?url=%2Ffront-static%2Fdownloads%2Fcalendar%2Fen-US.png&w=384&q=75" />
+                </div>
+              </div>
+            </div>
+            <p className="text-gray-400 cursor-default text-sm">
+              Notion은 사용 중인 브라우저에서 <a className="underline hover:text-blue-500 cursor-pointer">언제든지 사용할 수 있습니다.</a>.
+            </p>
+          </div>
+        </section>
       </main>
 
+      {/* FOOTER 하단 네비게이션 바 */}
       <div className="Footer">
         <section className="FooterBanner">
             <div className="FooterTop">

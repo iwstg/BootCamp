@@ -16,7 +16,7 @@ import { increment, decrement, toggleCounter } from "./actions/counterActions";
  *  npx tailwindcss init
  *  tailwind.config.js 파일 내용을 동일하게 설정
  * 
- * 이후 index.js에서 3줄 추가
+ * 이후 index.css에서 3줄 추가
     @tailwind base;
     @tailwind components;
     @tailwind utilities;
