@@ -35,6 +35,7 @@ export default function DropdownNav({name, parentRef}) {
         className="TopNavigatorTab items z-50"
         onMouseEnter={() => {setAnimated(true); setIsHovered(true)}}
         onMouseLeave={() => {setAnimated(false); setIsHovered(false)}}
+        // onMouseOut={() => setIsToggled(true)}
         ref={heightref}
         >
         {/* 상단 고정 네비게이션 */}
