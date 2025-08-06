@@ -50,6 +50,7 @@ VS코드에서 파트부분 잘 안보여서... 추가했습니다
 /* 상단 로고 구역 */
 .TopLogoImage{
     justify-self: start;
+    cursor: pointer;
     /* background-color: rgba(0, 0, 255, 0.568); */
     /* grid-column: 1; */
 }
@@ -138,6 +139,11 @@ VS코드에서 파트부분 잘 안보여서... 추가했습니다
 .items{    
     justify-items: center;
     align-content: center;
+}
+
+.items:hover{
+    background-color: #eee;
+    border-radius: 0.5rem;
 }
 
 .TopNotionStartForFree{

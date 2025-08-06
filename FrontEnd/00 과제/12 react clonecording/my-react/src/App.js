@@ -3,9 +3,12 @@ import './App.css';
 import Carousels from './Carousel';
 import CustomerSounds from './companyReview';
 import AppsList from './CombineAppList';
+import DropList from './Dropdown';
+import { useRef } from "react";
 
 function App() {
-  
+  const parentRef = useRef(null);
+
   return (
         <>
         {/* HEADER 상단 네비게이션 바 */}
@@ -16,14 +19,31 @@ function App() {
           </div>
 
           <div className="TopNavigatorTab">
-            <button className="TopNavList items">
+            {/* <div className="TopNavList items group relative group-hover:hidden">
               <span>Notion</span>
               <span className="TopNavListNotionImg">
                   <svg viewBox="0 0 30 30">
                       <polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7 "></polygon>
                   </svg>
               </span>
-            </button>
+              
+              <div
+                className="
+                fixed left-0 w-screen top-16 h-[320px]
+                flex items-center justify-center 
+                opacity-0 translate-y-[-20%] 
+                transition-all duration-500 ease-out
+                group-hover:opacity-100 group-hover:translate-y-0
+                bg-black bg-opacity-70 text-white
+                grid-cols-4
+                "
+              >
+                <p className="">🎉 Hello from above!</p>
+            </div>
+          </div> */}
+            
+            <DropList name='Notion'/>
+
             <a className="items">
               <span>메일</span>
             </a>
@@ -43,14 +63,7 @@ function App() {
               <span>가격</span>
             </a>
             
-            <button className="TopNavList items">
-              <span >둘러보기</span>
-              <span className="TopNavListNotionImg">
-                <svg viewBox="0 0 30 30">
-                  <polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7 "></polygon>
-                </svg>
-              </span>
-            </button>
+            <DropList name='둘러보기'/>
 
             <a className="items">
               <span>영업팀 문의하기</span>
@@ -96,7 +109,7 @@ function App() {
             </section>
 
             {/* 메인페이지 - Grid 구조 */}
-            <section className="grid grid-col-2 gap-5">
+            <section className="grid grid-cols-2 gap-5">
 
                 <div className="flex flex-col border-2 border-red-50 rounded-2xl bg-red-50 overflow-hidden cursor-pointer hover:border-red-300 transition-colors duration-300" title="사용해보기">
                   <div className="p-4 w-full rounded-lg bg-red-50">
