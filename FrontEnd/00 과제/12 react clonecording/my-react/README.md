@@ -18,4 +18,4 @@ CRA로 변환하면서 새로 react clonecording 으로 프로젝트를 생성�
 
 Header부분 간단한 동작 (hover 마우스 올리면 추가정보 내용탭 보이는 기능) 추가 - (2025-08-06)
 
-
+상단 nav 애니메이션 구현 및 App.css 스타일 tailwindCss로 전환하는 과정 - (2025-08-07)
