@@ -1,8 +1,26 @@
+import { useState, useEffect} from "react"
 import Dropdown from './Dropdown'
 
 export default function HeadNaviBar(){
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 0);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      // 초기 상태 반영
+      handleScroll();
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
     return (
-    <section className="w-full my-0 mx-auto grid grid-cols-1 items-center sticky top-0 left-0 w-full bg-white shadow z-50">
+    <section className={`w-full my-0 mx-auto grid grid-cols-1 items-center sticky top-0 left-0 w-full bg-white 
+      ${isScrolled ? 'shadow-md' : 'shadow-none'} z-50`}>
             <nav className="w-full my-0 mx-auto h-auto grid grid-cols-[1fr_auto_1fr] items-center justify-between bg-white font-sm font-[500] leading-[1.25rem] py-[15px] px-[25px]">
               <div className="justify-self-start cursor-pointer">
                 <img id="profileImage" src="https://img.icons8.com/?size=100&id=nZoJhBpPfVev&format=png&color=000000" width="40" />

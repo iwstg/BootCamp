@@ -1,6 +1,6 @@
-import HeadNaviBar from './components/Header/NavigationBar';
-import MainContentsArea from './components/Main/MainContentsArea';
-import FooterNaviBar from './components/Footer/FooterNavigation';
+import HeadNaviBar from './components/header/NavigationBar';
+import MainContentsArea from './components/main/MainContentsArea';
+import FooterNaviBar from './components/footers/FooterNavigation';
 
 function App() {
 

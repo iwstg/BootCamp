@@ -1,6 +1,6 @@
-import LanguageSelection from './LanguageSelect'
+import LanguageSelection from "./LanguageSelect"
 
-export default function FooterNaviBar(){
+export default function FooterNavigation(){
     return(
         <div className="my-auto mx-[34.5px] py-[80px] px-[125px] flex justify-center">
         <section className="w-full max-w-[1250px] flex gap-[24px] justify-between">
