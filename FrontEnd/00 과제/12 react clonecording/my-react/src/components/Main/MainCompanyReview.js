@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import MainVideoModal from "./MainVideoModal";
 
 const customerSounds=[
@@ -12,9 +12,6 @@ const customerSounds=[
 
 export default function CompanyReview(){
     const [isModalOpen, setIsModalOpen] = useState(false);
-    useEffect(() => {
-    console.log("모달 상태:", isModalOpen);
-    }, [isModalOpen]);
     return(
         <section className="flex flex-col">
             <div className='flex py-4 gap-2'>
