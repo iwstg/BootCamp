@@ -13,28 +13,29 @@ export default function Carousel() {
   const [current, setCurrent] = useState(0);
   
   return (
-    <div className="w-full mx-auto">
+    <section className="flex flex-col justify-center items-center">
+      <h1 className="font-bold text-5xl m-4">팀마다 제공되는 개별 공간</h1>
+      <div className="w-full mx-auto">
         <div className="flex justify-center gap-2 mb-4 items-center">
-        {caroitems.map((caroitems, index) => (
-          <button
+          {caroitems.map((caroitems, index) => (
+            <button
             key={index}
             onClick={() => setCurrent(index)}
             className={`w-fit h-8 px-3 rounded-full ${
-              current === index ? 'bg-gray-200' : ''
+            current === index ? 'bg-gray-200' : ''
             } transition-colors duration-500 ease-in-out hover:bg-gray-200 text-sm text-gray-500`}
-          >{caroitems.name}</button>
-        ))}
-      </div>
+            >{caroitems.name}</button>
+          ))}
+        </div>
 
-      <div className="w-full overflow-hidden rounded-lg shadow-lg bg-black">
-        <img
+        <div className="w-full overflow-hidden rounded-lg shadow-lg bg-black">
+          <img
           src={caroitems[current].src}
           alt={caroitems[current].name}
           className="w-full h-full object-cover transition-all duration-500"
-        />
+          />
+        </div>
       </div>
-
-      
-    </div>
+    </section>
   );
 }

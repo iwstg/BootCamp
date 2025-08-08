@@ -17,27 +17,41 @@ const AppList = [
 
 export default function CombineAppList(){
     return(
-        <>
-            {AppList.map((app, index) => (
-                index <= 5 ? (
-                    <React.Fragment key={index}>
-                    {index === 0 && <li className="font-bold mb-2 text-[0.875rem]">통합 가능 앱</li>}
-                    <li className="flex gap-2 items-center mb-2 justify-start w-64 text-[0.875rem]">
-                        <img className="w-3" src={app.url} alt={app.name} />
-                        <span>{app.name}</span>
-                    </li>
-                    </React.Fragment>
-                ) : (
-                    <React.Fragment key={index}>
-                    {index === 9 && <li className="font-bold mb-2 text-[0.875rem]">출시 예정</li>}
-                    <li className="flex gap-2 items-center mb-2 justify-start w-64 text-[0.875rem]">
-                        <img className="w-3" src={app.url} alt={app.name} />
-                        <span>{app.name}</span>
-                    </li>
-                    </React.Fragment>
-                )
-            ))}
-        </>
+        <div className="flex justify-center gap-4 mt-16 pt-14">
+            <div className="flex flex-col gap-2 w-2/5">
+                <h1 className="text-balance font-bold text-[2.625rem] leading-tight mb-1 tracking-[-0.3rem]">한 번의 검색으로 무엇이든 찾기</h1>
+                <p className="text-sm font-[600] mb-4">Notion 내에서 회사의 모든 지식과 앱을 검색할 수 있습니다.</p>
+                <div className="flex items-center mb-8">
+                <button className="bg-blue-600 text-white font-bold py-[6px] px-[16px] mr-4 rounded-lg">무료 체험하기</button>
+                <a href="" className="text-blue-500 hover:underline">데모 요청하기 →</a>
+                </div>
+                <div className="flex justify-start gap-10">
+                <ul className="columns-2">
+                    {AppList.map((app, index) => (
+                        index <= 5 ? (
+                            <React.Fragment key={index}>
+                            {index === 0 && <li className="font-bold mb-2 text-[0.875rem] cursor-default">통합 가능 앱</li>}
+                            <li className="flex gap-2 items-center mb-2 justify-start w-64 text-[0.875rem] cursor-default">
+                                <img className="w-3" src={app.url} alt={app.name} />
+                                <span>{app.name}</span>
+                            </li>
+                            </React.Fragment>
+                        ) : (
+                            <React.Fragment key={index}>
+                            {index === 9 && <li className="font-bold mb-2 text-[0.875rem] cursor-default">출시 예정</li>}
+                            <li className="flex gap-2 items-center mb-2 justify-start w-64 text-[0.875rem] cursor-default">
+                                <img className="w-3" src={app.url} alt={app.name} />
+                                <span>{app.name}</span>
+                            </li>
+                            </React.Fragment>
+                        )
+                    ))}
+                </ul>
+                </div>
+            </div>
+            <div className="w-3/5">
+                <img className="w-full" src="https://www.notion.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fspoqsaf9291f%2F1WQxz3QGRQ39BXXtHbC4Hq%2Fe0ec7a9113e0e0629ab2af60fb982318%2FEnterpriseSearch_-_Landscape_-_en-US.jpg&w=3840&q=75" />
+            </div>
+        </div>
     )
-
 }

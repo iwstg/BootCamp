@@ -4,12 +4,16 @@ import React, { useEffect, useState, useRef } from "react";
 export default function DropdownNav({name, parentRef}) {
     const [isHovered, setIsHovered] = useState(false);
     const [isToggled, setIsToggled] = useState(false); //추가
+    const [isOpned, setIsOpend] = useState(false);
     
     const heightref = useRef(null);
     const dropdownRef = useRef(null); // 추가
     const [downPos, setPos] = useState('0');
     const showDropdown = isHovered || isToggled; // 추가
 
+    const Togglebtn = () => {
+        setIsToggled(!isToggled);
+    }
 
     useEffect(() => {
         const refs = heightref.current.getBoundingClientRect().bottom;
@@ -35,14 +39,15 @@ export default function DropdownNav({name, parentRef}) {
 
     return (
         <div
-        className="TopNavigatorTab items z-50"
+        className="z-50"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        onMouseUp={() => setIsToggled(true)}
+        onMouseUp={() => Togglebtn()}
+        
         ref={heightref}
         >
         {/* 상단 고정 네비게이션 */}
-        <div className={`py-[5px] px-[10px] flex gap-8 cursor-pointer items-center ${isToggled ? "bg-gray-200" : ""} hover:bg-gray-200`}>
+        <div className={`py-[5px] px-[10px] flex gap-8 cursor-pointer items-center rounded-[0.5rem] ${isToggled ? "bg-gray-200" : ""} hover:bg-gray-200`}>
             <div className="flex cursor-pointer font-semibold text-gray-800 gap-2">
                 <span className="text-sm font-[600]" >{name}</span>
                 <span className="w-2 h-4 justify-items-center self-center">
@@ -57,14 +62,11 @@ export default function DropdownNav({name, parentRef}) {
                         clipRule="evenodd"
                     />
                     </svg>
-                    {/* <svg viewBox="0 0 30 30">
-                        <polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7 "></polygon>
-                    </svg> */}
                 </span>
             </div>
         </div>
-        {/* 드롭다운 hover 따라 애니메이션 1번만 수행*/}
-        <div className={`absolute ${showDropdown ? "left-0 w-screen":"-left-[9999px] w-0"} py-1`}
+        {/* -left-9999px로 보이지 않는 영역에 미리 랜더링 -> pointer-events-none 으로 영역에 마우스 호버해도 이벤트 발생x 호버시 이벤트 발생o*/}
+        <div className={`absolute ${isHovered ? "left-0 w-screen":"pointer-events-none left-0 w-screen"} py-1`}
                 style={{ top: `${downPos}px`}}>
                 
                 <div className={`h-fit 
@@ -74,7 +76,7 @@ export default function DropdownNav({name, parentRef}) {
                     ${showDropdown ? "opacity-100 translate-y-0" 
                         : "opacity-0 -translate-y-[20%]"}
                 `}>
-        {showDropdown && ( //변경
+        {showDropdown && ( // 드롭다운이 보여지게 되며 name의 값에따라 분기처리
             name === 'Notion' ? (
                 <>
                     <div className="h-[300px] " ref={dropdownRef}>
