@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  *  2025-08-11
  * (Advanced) 여러 개의 단어를 사전 순서대로 정렬하는 프로그램을 만들어 봅시다.
- * 이때, 단어 비교에는 compareTo() 메소드를 활용합니다.
+ * 이때, 단어 비교에는 compareTo() 메소드를 활용합니다. (현재 이미 정렬이 되어있어서 임의로 변경함)
  * 단어 : apple, banana, cherry
  */
 

@@ -12,7 +12,7 @@ package JavaPractice.LoginIDCheck;
 
 public class AdminLoginCheck {
     public static void main(String[] args) {
-        String DBID = "Admin"; // 로그인 성공 기준 ID
+        String DBID = "Admin"; // 로그인 성공 기준 ID toLowerCase() 매소드로 소문자 화 시켜 비교할 예쩡
         String[] InputID = {"ADMIN" , "Admin", "ADmIn", "AdMIN", "admins", "AADD"}; // 입력될 ID 배열
 
         System.out.println("로그인ID\t- 결과\n--------------------");
