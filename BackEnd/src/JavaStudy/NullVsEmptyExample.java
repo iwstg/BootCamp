@@ -1,3 +1,5 @@
+package JavaStudy;
+
 public class NullVsEmptyExample {
     public static void main(String[] args) {
         String nullStr = null;

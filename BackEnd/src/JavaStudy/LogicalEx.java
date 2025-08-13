@@ -1,4 +1,4 @@
-import org.w3c.dom.ls.LSOutput;
+package JavaStudy;
 
 public class LogicalEx {
     public static void main(String[] args) {

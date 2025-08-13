@@ -1,3 +1,5 @@
+package JavaStudy;
+
 import java.util.Arrays;
 
 public class TwoDimArrayPracitce {

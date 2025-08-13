@@ -1,3 +1,5 @@
+package JavaStudy;
+
 import java.util.Scanner;
 
 public class OddEvenCheck {

@@ -1,3 +1,5 @@
+package JavaStudy;
+
 public class PrintNumbersMethodExample {
     public static void printNumbers(String message, int... numbers) {
         System.out.println(message);

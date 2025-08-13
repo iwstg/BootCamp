@@ -1,3 +1,5 @@
+package JavaStudy;
+
 public class ExVar {
     public static void main(String[] args) {
         final int MAX_VALUE = 100;

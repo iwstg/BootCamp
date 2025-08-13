@@ -1,3 +1,5 @@
+package JavaStudy;
+
 public class ArrayExample {
     public static void main(String[] args) {
         // 1차원 배열

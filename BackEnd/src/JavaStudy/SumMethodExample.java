@@ -1,3 +1,5 @@
+package JavaStudy;
+
 public class SumMethodExample {
     public static void main(String[] args) {
         System.out.println(sum(1, 2, 3));     // 결과: 6

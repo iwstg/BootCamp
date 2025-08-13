@@ -1,3 +1,5 @@
+package JavaStudy;
+
 public class NestedForExample {
     public static void main(String[] args) {
         // 중첩 for

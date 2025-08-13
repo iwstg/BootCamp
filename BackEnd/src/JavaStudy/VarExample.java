@@ -1,3 +1,5 @@
+package JavaStudy;
+
 public class VarExample {
     public static void main(String[] args) {
         var num = 10;

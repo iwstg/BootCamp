@@ -1,3 +1,5 @@
+package JavaStudy;
+
 public class EscapeSequencesExample {
     public static void main(String[] args) {
         // 여러 가지 이스케이프 시퀀스 사용

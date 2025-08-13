@@ -1,3 +1,5 @@
+package JavaStudy;
+
 public class FallThroughExample {
     public static void main(String[] args) {
         int day = 3;
