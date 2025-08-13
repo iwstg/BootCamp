@@ -37,6 +37,7 @@ public class BankAccount {
     public void getBalance() {
         System.out.println(owner+"님의 현재 남은 잔액: "+ balance);
     }
+
     /**
      * (Advenced) tranksferTo 를 사용해 BankAccount 끼리 이체 기능 추가
      */

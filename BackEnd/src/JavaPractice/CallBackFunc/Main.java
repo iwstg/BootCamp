@@ -1,4 +1,5 @@
 package JavaPractice.CallBackFunc;
+
 public class Main {
     public static void main(String[] args) {
         BankAccount bank1 = new BankAccount("123", "John", 5000);
