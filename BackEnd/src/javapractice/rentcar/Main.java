@@ -100,7 +100,7 @@ public class Main {
         for(Vehicle v : vehicles){
             v.rent(); // 대여 시작
             v.returnVehicle(); // 반납 완료
-            System.out.println(v.calculateRentalFee(6)+ " 원"); // 6일 대여 시 가격
+            System.out.printf("%,d원 %n", v.calculateRentalFee(6)); // 6일 대여 시 가격
         }
     }
 }
