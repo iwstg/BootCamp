@@ -26,10 +26,10 @@ class GenericBox<T>{
     }
 
     static <T> void swap(GenericBox<T> a,GenericBox<T> b){
-        T Temp;
-        Temp = b.getValue();
+        T temp;
+        temp = b.getValue();
         b.setValue(a.getValue());
-        a.setValue(Temp);
+        a.setValue(temp);
     }
 
     public <R> GenericBox<R> map(Function<? super T, ? extends R> mapper) {

@@ -21,7 +21,7 @@ abstract class Vehicle implements Rentable, Returnable{
 }
 
 
-class Car extends Vehicle implements Rentable, Returnable{
+class Car extends Vehicle{
 
     public Car(String brand, String model) {
         super(brand, model);
@@ -43,7 +43,7 @@ class Car extends Vehicle implements Rentable, Returnable{
     }
 }
 
-class Truck extends Vehicle implements Rentable, Returnable{
+class Truck extends Vehicle{
 
     public Truck(String brand, String model) {
         super(brand, model);
@@ -65,7 +65,7 @@ class Truck extends Vehicle implements Rentable, Returnable{
     }
 }
 
-class ElectricCar extends Vehicle implements Rentable, Returnable{
+class ElectricCar extends Vehicle{
 
     public ElectricCar(String brand, String model) {
         super(brand, model);
