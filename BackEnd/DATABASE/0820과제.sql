@@ -98,13 +98,13 @@ UPDATE customers SET city = "Busan_si" WHERE city="Busan";
 
 -- orders 에서 1년 이전의 CANCELLED 주문을 삭제하세요..
 -- 기준 1) 현재 년도가 아닌 모든 데이터 삭제
-DELETE FROM orders WHERE YEAR(ordered_at) <> YEAR(NOW());
+DELETE FROM orders WHERE status='CANCELLED' AND YEAR(ordered_at) <> YEAR(NOW());
 -- 기준 2) 1년 이상 지난 모든 데이터 삭제
-DELETE FROM orders WHERE DATEDIFF(NOW(), ordered_at) >= 365;
-DELETE FROM orders WHERE TIMESTAMPDIFF(DAY, ordered_at, NOW()) >= 365;
-DELETE FROM orders WHERE ordered_at NOT BETWEEN DATE_SUB(NOW(), INTERVAL 1 YEAR) AND NOW();
+DELETE FROM orders WHERE status='CANCELLED' AND  DATEDIFF(NOW(), ordered_at) >= 365;
+DELETE FROM orders WHERE status='CANCELLED' AND  TIMESTAMPDIFF(DAY, ordered_at, NOW()) >= 365;
+DELETE FROM orders WHERE status='CANCELLED' AND  ordered_at NOT BETWEEN DATE_SUB(NOW(), INTERVAL 1 YEAR) AND NOW();
 -- 기준 3) 작년의 모든 데이터 삭제
-DELETE FROM orders WHERE YEAR(ordered_at) = (YEAR(NOW())-1);
+DELETE FROM orders WHERE status='CANCELLED' AND  YEAR(ordered_at) = (YEAR(NOW())-1);
 
 -- order_items에서 qty=0인 행 들을 삭제하세요.
 DELETE FROM order_items WHERE qty=0;
@@ -115,7 +115,7 @@ DELETE FROM order_items WHERE qty=0;
 SELECT *, ROUND((price*0.9), 2) AS sale_price FROM products;
 
 -- orders에서 상태를 한글로 치환(PAID-결제완료, SHIPPED-배송중, CANCELLED-취소) 하여 조회하세요.
-SELECT order_id, customer_id, ordered_at, 
+SELECT order_id, customer_id, ordered_at,
 	CASE status
 		WHEN "PAID" THEN '결제완료'
         WHEN "SHIPPED" THEN '배송중'
