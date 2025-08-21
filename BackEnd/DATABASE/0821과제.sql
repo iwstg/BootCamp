@@ -32,7 +32,7 @@ WHERE price >= (SELECT AVG(price) FROM products);
 SELECT order_id, SUM(qty*unit_price) AS 'total_price' FROM order_items
 GROUP BY order_id
 HAVING total_price = 
-	(SELECT SUM(qty*unit_price) AS 't' FROM order_items GROUP BY order_id ORDER BY 't' DESC LIMIT 1);
+	(SELECT SUM(qty*unit_price) AS 't' FROM order_items GROUP BY order_id ORDER BY t DESC LIMIT 1);
 
 -- 서브쿼리 미사용
 SELECT o.order_id, SUM(qty*unit_price) AS 'total_order_price' 
