@@ -37,7 +37,7 @@ HAVING total_price =
 -- 서브쿼리 미사용
 SELECT o.order_id, SUM(qty*unit_price) AS 'total_order_price' 
 FROM orders o JOIN order_items i ON o.order_id = i.order_id
-GROUP BY order_id ORDER BY 'total_order_price' DESC LIMIT 1;
+GROUP BY order_id ORDER BY total_order_price DESC LIMIT 1;
 
 -- 같은 도시 고객들의 평균 가입일보다 늦게 가입한 고객을 조회하세요 (상관 서브쿼리)
 SELECT * FROM customers c1
@@ -62,12 +62,12 @@ WHERE price IN (SELECT MAX(price) FROM products GROUP BY category);
 SELECT o.order_id, SUM(qty*unit_price) AS 'total_order_price', 
 RANK() OVER (ORDER BY SUM(qty*unit_price) DESC) AS 'RANKS'
 FROM orders o JOIN order_items i ON o.order_id = i.order_id
-GROUP BY order_id ORDER BY 'total_order_price' DESC;
+GROUP BY order_id ORDER BY total_order_price DESC;
 
 -- 고객별 주문 시각 기준 ROW_NUMBER()를 매겨 최근 2건만 표시하세요.
 SELECT ROW_NUMBER() OVER (ORDER BY ordered_at DESC) AS 'recently_order_RANK', o.*
 FROM orders o JOIN customers c ON o.customer_id = c.customer_id 
-ORDER BY 'recently_order' LIMIT 2;
+ORDER BY recently_order LIMIT 2;
 
 -- 4) 종합문제
 -- 각 상품의 카테고리(category)별로, 가장 매출이 큰 고객을 구하세요. 
