@@ -72,6 +72,8 @@ ORDER BY recently_order LIMIT 2;
 -- 4) 종합문제
 -- 각 상품의 카테고리(category)별로, 가장 매출이 큰 고객을 구하세요. 
 -- ( CANCELLED 주문 제외, order + order_items + products + 서브쿼리 활용)
+
+/* 20250821 서브쿼리 R이 필요없을것 같아 다시작성
 SELECT category, name, total_price
 FROM (
 	SELECT category, name, total_price, ROW_NUMBER() OVER (PARTITION BY category ORDER BY total_price DESC, customer_id ASC) AS 'ranks'
@@ -86,4 +88,15 @@ FROM (
 	) T
 ) R
 WHERE ranks = 1;
-
+*/
+SELECT category, name
+FROM (
+     SELECT c.customer_id, c.name, p.category, ROW_NUMBER() OVER (PARTITION BY category ORDER BY SUM(qty*price) DESC, customer_id ASC) AS 'ranks'
+     FROM customers c
+              JOIN orders o ON c.customer_id = o.customer_id
+              JOIN order_items i ON o.order_id = i.order_id
+              JOIN products p ON i.product_id = p.product_id
+     WHERE p.product_id = i.product_id AND o.status <> 'CANCELLED'
+     GROUP BY c.customer_id, p.category
+ ) T
+WHERE ranks = 1;
