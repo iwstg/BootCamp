@@ -3,10 +3,10 @@ package boot.start.practice.domainpractice;
 public class Product {
     private String productId;
     private String productName;
-    private String price;
+    private int price;
 
     public Product(){}
-    public Product(String productId, String productName, String price) {
+    public Product(String productId, String productName, int price) {
         this.productId = productId;
         this.productName = productName;
         this.price = price;
@@ -28,11 +28,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }

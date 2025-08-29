@@ -35,12 +35,12 @@ public class ProductServlet extends HttpServlet {
         out.println("<ul>");
         if(productID == null) {
             for (Product p : products) {
-                if (minPrice == null || Integer.parseInt(p.getPrice()) >= Integer.parseInt(minPrice))
+                if (minPrice == null || p.getPrice() >= Integer.parseInt(minPrice))
                     out.println("<li> 상품ID - <b>" + p.getProductId() + "</b>, 상품명: <b>" + p.getProductName() + "</b> 가격: <b>" + p.getPrice() + "</b>원</li>");
             }
         }else{
             for (Product p : products) {
-                if(p.getProductId().equals(productID) && (minPrice == null || Integer.parseInt(p.getPrice()) >= Integer.parseInt(minPrice))) {
+                if(p.getProductId().equals(productID) && (minPrice == null || p.getPrice() >= Integer.parseInt(minPrice))) {
                     out.println("<li> 상품ID - <b>" + p.getProductId() + "</b>, 상품명: <b>" + p.getProductName() + "</b> 가격: <b>" + p.getPrice() + "</b>원</li>");
                 }
             }
