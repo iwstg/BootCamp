@@ -26,5 +26,4 @@ public class PostRepository {
         return new ArrayList<>(postsMap.values());
     }
 
-
 }
