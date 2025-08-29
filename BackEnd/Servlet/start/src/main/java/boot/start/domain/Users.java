@@ -2,9 +2,8 @@ package boot.start.domain;
 
 public class Users {
     private Long userIdx;
-
-    String userId;
-    String userName;
+    private String userId;
+    private String userName;
 
     public Long getUserIdx() {
         return userIdx;
