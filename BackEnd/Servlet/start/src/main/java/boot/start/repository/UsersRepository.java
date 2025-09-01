@@ -1,22 +1,18 @@
 package boot.start.repository;
 
 import boot.start.domain.Users;
-import org.apache.catalina.User;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-public class UserRepository {
-//    9월 1일 수업때 시작할 내용
-//    private static final UserRepository instance = new UserRepository();
-//    public static UserRepository getInstance(){
-//        return instance;
-//    }
-//
-//    private UserRepository(){
-//        createUsers();
-//    }
+public class UsersRepository {
+    // 싱글톤 인스턴스
+    private static final UsersRepository instances = new UsersRepository();
+    private UsersRepository() {}
+    public static UsersRepository getInstance() {
+        return instances;
+    }
 
     private final ConcurrentMap<Long, Users> usersMap = new ConcurrentHashMap<>();
     private static Long userIdx = 0L;

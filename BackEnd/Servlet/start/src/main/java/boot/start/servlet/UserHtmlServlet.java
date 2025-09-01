@@ -1,20 +1,24 @@
 package boot.start.servlet;
 
 import boot.start.domain.Users;
-import boot.start.repository.UserRepository;
+import boot.start.repository.UsersRepository;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet(name="UserHtmlServlet", urlPatterns = {"/userhtml","/userhtml/list"})
+//@WebServlet(name="UserHtmlServlet", urlPatterns = {"/userhtml","/userhtml/list"})
+@WebServlet("/userhtml/*")
 public class UserHtmlServlet extends HttpServlet {
-    private final UserRepository userRepository = new UserRepository();
+//    private final UsersRepository usersRepository = new UsersRepository(); // 싱글톤 패턴에서 못쓰는 상태
+
+    UsersRepository usersRepository = UsersRepository.getInstance();
 
     //html
     private void handleUserFrom(HttpServletRequest req, HttpServletResponse resp)
@@ -44,10 +48,34 @@ public class UserHtmlServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        String Path = req.getPathInfo();
-        System.out.println("Path: " + Path);
+        String path = req.getPathInfo();
+        System.out.println("Path: " + path);
 
-        if("/list".equals(Path)){
+        if(path == null || "/login".equals(path)){
+            HttpSession session = req.getSession();
+
+            if(session.getAttribute("loginUser") == null){
+                Users admin = new Users();
+                admin.setUserName("admin");
+                admin.setUserId("admin");
+
+                session.setAttribute("loginUser", admin);
+                usersRepository.save(admin);
+            }
+
+            resp.setContentType("text/html;charset=UTF-8");
+            PrintWriter writer = resp.getWriter();
+            writer.println("<!DOCTYPE html>");
+            writer.println("<html><head><title>Session Logined</title></head><body>");
+            writer.println("<p>자동으로 로그인 되었습니다.</p>");
+            writer.println("<a href='/userhtml/list'>전체 회원 목록 보기</a>");
+            writer.println("</body></html>");
+            return;
+        }
+
+
+
+        if("/list".equals(path)){
             handleApiList(resp);
         }else {
             handleUserFrom(req, resp);
@@ -68,7 +96,7 @@ public class UserHtmlServlet extends HttpServlet {
         user.setUserId(userId);
         user.setUserName(userName);
 
-        userRepository.save(user);
+        usersRepository.save(user);
 
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter writer = resp.getWriter();
@@ -86,7 +114,7 @@ public class UserHtmlServlet extends HttpServlet {
             throws IOException {
         resp.setContentType("text/html;charset=UTF-8");
 
-        List<Users> allUsers = userRepository.findAll();
+        List<Users> allUsers = usersRepository.findAll();
 
         PrintWriter out = resp.getWriter();
         out.println("[");

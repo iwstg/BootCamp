@@ -20,15 +20,26 @@ public class PostServlet extends HttpServlet {
 
         String Path = req.getPathInfo();
 
-        if(req.getParameter("postIdx") != null) {
-            long postidx = Long.valueOf(req.getParameter("postIdx"));
-            handleDirectPost(postidx, resp);
-        }else if(req.getParameter("keyword") != null) {
-            handleSerchConetent(req.getParameter("keyword"), resp);
-        }else if ("/list".equals(Path)) {
-            handlePostList(resp);
-        } else {
-            handlePosts(resp);
+        try {
+            if (req.getParameter("postIdx") != null) {
+                long postidx = Long.valueOf(req.getParameter("postIdx"));
+                handleDirectPost(postidx, resp);
+            } else if (req.getParameter("keyword") != null) {
+                handleSerchConetent(req.getParameter("keyword"), resp);
+            } else if ("/list".equals(Path)) {
+                handlePostList(resp);
+            } else {
+                handlePosts(resp);
+            }
+        }catch (NumberFormatException | NullPointerException e){
+            resp.setContentType("text/html;charset=UTF-8");
+            PrintWriter out = resp.getWriter();
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<h1>잘못된 접근</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
@@ -85,7 +96,7 @@ public class PostServlet extends HttpServlet {
     // 선택한 게시글 내용 조회
     protected void handleDirectPost(long idx, HttpServletResponse resp)
         throws IOException {
-        Post post = repo.findByPostIdx(idx);
+        Post post = repo.findByPostIdx(idx).orElse(null);
 
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
