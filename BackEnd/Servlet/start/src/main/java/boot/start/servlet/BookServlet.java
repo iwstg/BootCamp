@@ -228,8 +228,6 @@ public class BookServlet extends HttpServlet {
         }
         book.setTitle(req.getParameter("title"));
         book.setPublisher(req.getParameter("publisher"));
-        book.setSalePrice(Double.parseDouble(req.getParameter("salePrice")));
-        book.setRentalPrice(Double.parseDouble(req.getParameter("rentalPrice")));
         book.setRenter(req.getParameter("renter"));
         book.setUpdateDate(LocalDate.now());
         repo.update(bookId, book);
