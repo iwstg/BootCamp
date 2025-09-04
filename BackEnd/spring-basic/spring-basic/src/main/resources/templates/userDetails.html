@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사용자 정보</title>
+</head>
+<body>
+<h2>등록된 사용자 정보</h2>
+
+<p>아이디: <span th:text="${user.userId}">userId</span></p>
+<p>이름: <span th:text="${user.userName}">userName</span></p>
+<p>등급: <span th:text="${user.rank}">rank</span></p>
+<p>등록 날짜: <span th:text="${user.registrationDate}">2024-09-12</span></p>
+<p>업데이트 날짜: <span th:text="${user.updateDate}">2024-09-12</span></p>
+
+<!-- 등급에 따라 메시지 분기(117 슬라이드에서 문법 설명) -->
+<p th:if="${user.rank == 'admin'}">관리자 계정입니다.</p>
+<p th:unless="${user.rank == 'admin'}">일반 사용자 계정입니다.</p>
+
+<p><a th:href="@{/user}">다시 등록하기</a></p>
+</body>
+</html>

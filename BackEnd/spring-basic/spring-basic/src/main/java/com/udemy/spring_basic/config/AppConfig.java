@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "com.udemy.spring_basic")
 public class AppConfig {
 
-    @Bean(name = "userRepository")
+    @Bean(name = "userRepository2")
     public UsersRepository usersRepository() {
         System.out.println("수동 등록");
         return new UsersRepository();

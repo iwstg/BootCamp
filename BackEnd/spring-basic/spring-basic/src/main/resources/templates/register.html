@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사용자 등록</title>
+</head>
+<body>
+<h2>사용자 등록 폼</h2>
+
+<!-- 폼 전송 → 컨트롤러의 @PostMapping("/submitUser") -->
+<form method="post">
+    <label for="userId">아이디:</label>
+    <input type="text" id="userId" name="userId" required />
+    <br/>
+
+    <label for="userName">이름:</label>
+    <input type="text" id="userName" name="userName" required />
+    <br/>
+
+    <label for="rank">등급:</label>
+    <input type="text" id="rank" name="rank" placeholder="admin 또는 user" required />
+    <br/>
+
+    <button type="submit" th:formaction="@{/submitUser}">HttpServletRequest 쓰기</button>
+    <button type="submit" th:formaction="@{/submitUserReqParam}">@RequestParam 쓰기</button>
+</form>
+</body>
+</html>
