@@ -1,13 +1,10 @@
 package com.udemy.mvc.controller;
 
+import com.udemy.mvc.domain.User;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-
-import static com.fasterxml.jackson.databind.type.LogicalType.Map;
 
 @RestController
 @Slf4j
@@ -27,4 +24,39 @@ public class PracticeController {
         log.info("userName = {}, userId = {}", userName, userId);
         return true;
     }
+
+    @GetMapping("/path4") // "/path3?useridx=15&userId=id&userName=hello"
+    public boolean modelAttributeTest(@ModelAttribute User user){
+        log.info("userIdx = {}, userId = {}, userName = {}",user.getUserIdx(), user.getUserId(), user.getUserName());
+        return true;
+    }
+
+    @GetMapping("/path/{userId}") // "/path/hello"
+    public boolean pathTest(@PathVariable("userId") String userId){
+        log.info("userIdx = {}", userId);
+        return true;
+    }
+
+    @PostMapping("/path5") // "/path5" post로 폼데이터면 쿼리스트링으로, json이면 json 그대로
+    public boolean requestBody(@RequestBody String message) {
+        log.info("message body = {}", message);
+        return true;
+    }
+
+    @GetMapping(value = "/header", headers = "Special=specialTest") // "/header" postMan에서 header로 key=value 전달
+    public boolean headerTest(){
+        log.info("specialTest");
+        return true;
+    }
+
+    @GetMapping(
+            value = "/produces-consumes",
+            consumes = "application/json",
+            produces = "application/json"
+    )
+    public String consumesProducesTest(){
+        log.info("Consumes Json and Produces Json");
+        return "{\"message\":\"Success\"}";
+    }
+
 }
