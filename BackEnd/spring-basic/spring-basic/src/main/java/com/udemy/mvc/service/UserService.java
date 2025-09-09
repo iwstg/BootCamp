@@ -1,9 +1,8 @@
-package com.udemy.mvc.Service;
+package com.udemy.mvc.service;
 
 import com.udemy.mvc.domain.User;
 import com.udemy.mvc.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;

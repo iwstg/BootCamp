@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>책 관리 - Validation Form</title>
+</head>
+<body>
+<h1>책 관리 (Form Validation)</h1>
+
+<div th:if="${error}" style="color: red;">
+    <p th:text="${error}">에러 메시지</p>
+</div>
+<div th:if="${success}" style="color: green;">
+    <p th:text="${success}">성공 메시지</p>
+</div>
+
+<form th:action="@{/validation/form/books}" th:object="${book}" method="post">
+    <label for="title">책 제목:</label><br>
+    <input type="text" id="title" th:field="*{title}" placeholder="예) 이펙티브 자바"/><br><br>
+    <label for="publisher">저자/출판사:</label><br>
+    <input type="text" id="publisher" th:field="*{publisher}" placeholder="예) Joshua Bloch / Addison-Wesley"/><br><br>
+
+    <label for="salePrice">가격:</label><br>
+    <input type="text" id="salePrice" th:field="*{salePrice}" placeholder="예) 38000"/><br><br>
+
+    <button type="submit">등록</button>
+</form>
+
+<hr/>
+<h3>현재 Book 모델</h3>
+<ul>
+    <li>title: <span th:text="${book.title}">-</span></li>
+    <li>publisher: <span th:text="${book.publisher}">-</span></li>
+    <li>salePrice: <span th:text="${book.salePrice}">-</span></li>
+</ul>
+</body>
+</html>

@@ -1,6 +1,6 @@
 package com.udemy.mvc.controller;
 
-import com.udemy.mvc.Service.BookService;
+import com.udemy.mvc.service.BookService;
 import com.udemy.mvc.domain.Book;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
